@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:github_issue_tracker/provider/login_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/login_screen/login_screen.dart';
 
@@ -9,13 +11,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'GitHub Issue Tracker',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider<LoginProvider>(
+      create: (context) => LoginProvider(),
+      child: MaterialApp(
+        title: 'GitHub Issue Tracker',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: LoginScreen(),
       ),
-      home: LoginScreen(),
     );
   }
 }

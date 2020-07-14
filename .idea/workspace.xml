@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1ebf3fef-b4f7-4f16-8e77-346c503f90f6" name="Default Changelist" comment="Create the login screen with the form">
-      <change afterPath="$PROJECT_DIR$/assets/code.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_form_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/login_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/text_form_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/provider/login_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/login_form_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_form_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594712104048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create the login screen with the form">
+      <created>1594720408111</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594720408111</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -73,41 +79,43 @@
       <path value="$PROJECT_DIR$/trip_expenses" />
     </ignored-roots>
     <MESSAGE value="Create flutter boilerplate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create flutter boilerplate" />
+    <MESSAGE value="Create the login screen with the form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create the login screen with the form" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-213" y="-1014" width="1362" height="986" key="CommitChangelistDialog2" timestamp="1594719561009">
+    <state x="-213" y="-1014" width="1362" height="986" key="CommitChangelistDialog2" timestamp="1594730492333">
       <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="-213" y="-1014" width="1362" height="986" key="CommitChangelistDialog2/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594719561009" />
+    <state x="-213" y="-1014" width="1362" height="986" key="CommitChangelistDialog2/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492333" />
     <state x="86" y="59" key="CommitChangelistDialog2/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594712103702" />
-    <state width="1479" height="453" key="GridCell.Tab.0.bottom" timestamp="1594719829195">
+    <state width="1479" height="239" key="GridCell.Tab.0.bottom" timestamp="1594730492355">
       <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1479" height="453" key="GridCell.Tab.0.bottom/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594719829195" />
+    <state width="1479" height="239" key="GridCell.Tab.0.bottom/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492355" />
     <state width="1398" height="154" key="GridCell.Tab.0.bottom/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594718476580" />
-    <state width="1479" height="453" key="GridCell.Tab.0.center" timestamp="1594719829193">
+    <state width="1479" height="239" key="GridCell.Tab.0.center" timestamp="1594730492354">
       <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1479" height="453" key="GridCell.Tab.0.center/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594719829193" />
+    <state width="1479" height="239" key="GridCell.Tab.0.center/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492354" />
     <state width="1398" height="154" key="GridCell.Tab.0.center/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594718476579" />
-    <state width="1479" height="453" key="GridCell.Tab.0.left" timestamp="1594719829193">
+    <state width="1479" height="239" key="GridCell.Tab.0.left" timestamp="1594730492354">
       <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1479" height="453" key="GridCell.Tab.0.left/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594719829193" />
+    <state width="1479" height="239" key="GridCell.Tab.0.left/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492354" />
     <state width="1398" height="154" key="GridCell.Tab.0.left/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594718476579" />
-    <state width="1479" height="453" key="GridCell.Tab.0.right" timestamp="1594719829194">
+    <state width="1479" height="239" key="GridCell.Tab.0.right" timestamp="1594730492354">
       <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1479" height="453" key="GridCell.Tab.0.right/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594719829194" />
+    <state width="1479" height="239" key="GridCell.Tab.0.right/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492354" />
     <state width="1398" height="154" key="GridCell.Tab.0.right/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594718476580" />
     <state x="58" y="100" key="SettingsEditor" timestamp="1594711800529">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="58" y="100" key="SettingsEditor/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594711800529" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1594712105717">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="99" y="-842" key="Vcs.Push.Dialog.v2" timestamp="1594730495273">
+      <screen x="-328" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="99" y="-842" key="Vcs.Push.Dialog.v2/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730495273" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594712105717" />
     <state x="-226" y="-957" width="1321" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594720001939">
       <screen x="-328" y="-1057" width="1920" height="1057" />
