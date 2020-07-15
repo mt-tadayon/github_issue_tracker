@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:github_issue_tracker/provider/login_provider.dart';
+import 'package:github_issue_tracker/service/login_service.dart';
 import 'package:github_issue_tracker/widgets/text_form_widget.dart';
 import 'package:provider/provider.dart';
-import '../../constants.dart';
+import '../constants.dart';
 
 class LoginFormWidget extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
@@ -11,7 +11,7 @@ class LoginFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loginProvider = Provider.of<LoginProvider>(context);
+    final loginProvider = Provider.of<LoginService>(context);
 
     usernameController.addListener(() {
       loginProvider.username = usernameController.text;
