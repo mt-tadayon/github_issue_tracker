@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:github_issue_tracker/model/issue_model.dart';
+import 'package:github_issue_tracker/model/issue.dart';
 
 class IssueListScreen extends StatelessWidget {
-  final List<IssueModel> issues = [
-    IssueModel(title: 'First issue', state: 'open'),
-    IssueModel(title: 'Second issue', state: 'close')
+  final List<Issue> issues = [
+    Issue(title: 'First issue', state: 'open'),
+    Issue(title: 'Second issue', state: 'close')
   ];
 
   @override

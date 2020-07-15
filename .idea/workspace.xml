@@ -4,28 +4,20 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ebf3fef-b4f7-4f16-8e77-346c503f90f6" name="Default Changelist" comment="Create the login screen with the form">
-      <change afterPath="$PROJECT_DIR$/lib/model/issue_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/repository_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/login_screen/issue_list_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/login_screen/repository_list_screen.dart" afterDir="false" />
+    <list default="true" id="1ebf3fef-b4f7-4f16-8e77-346c503f90f6" name="Default Changelist" comment="Create repository screen and issue screen">
+      <change afterPath="$PROJECT_DIR$/lib/model/issue.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/repository.g.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github_issue_tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/github_issue_tracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/service/login_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/login_form_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/login_form_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/issue_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/issue.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/repository_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/issue_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/issue_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/repository_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/repository_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/login_form_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/login_form_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1efNpYKFYj7lkVRfXAyTv44jxP1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -45,6 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -84,16 +79,26 @@
       <option name="project" value="LOCAL" />
       <updated>1594720408111</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create repository screen and issue screen">
+      <created>1594820202925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594820202925</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/trip_expenses" />
     </ignored-roots>
     <MESSAGE value="Create flutter boilerplate" />
     <MESSAGE value="Create the login screen with the form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create the login screen with the form" />
+    <MESSAGE value="Create Repository and issue screen" />
+    <MESSAGE value="Create repository screen and issue screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create repository screen and issue screen" />
   </component>
   <component name="WindowStateProjectService">
     <state x="60" y="128" width="1352" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594813702398">
@@ -104,10 +109,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="403" y="222" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594813571479" />
-    <state x="115" y="42" width="1362" height="986" key="CommitChangelistDialog2" timestamp="1594820138286">
+    <state x="749" y="405" width="750" height="236" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1594834689598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="115" y="42" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594820138286" />
+    <state x="749" y="405" width="750" height="236" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594834689598" />
+    <state x="115" y="42" width="1362" height="986" key="CommitChangelistDialog2" timestamp="1594834794430">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="115" y="42" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594834794430" />
     <state x="-213" y="-1014" width="1362" height="986" key="CommitChangelistDialog2/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730492333" />
     <state x="86" y="59" key="CommitChangelistDialog2/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594712103702" />
     <state x="401" y="246" key="FileChooserDialogImpl" timestamp="1594814176870">
@@ -143,9 +152,10 @@
     </state>
     <state x="49" y="104" width="1506" height="885" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594814198065" />
     <state x="58" y="100" key="SettingsEditor/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594711800529" />
-    <state x="99" y="-842" key="Vcs.Push.Dialog.v2" timestamp="1594730495273">
-      <screen x="-328" y="-1057" width="1920" height="1057" />
+    <state x="427" y="212" key="Vcs.Push.Dialog.v2" timestamp="1594820230414">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="427" y="212" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594820230414" />
     <state x="99" y="-842" key="Vcs.Push.Dialog.v2/0.23.1440.877/-328.-1057.1920.1057@-328.-1057.1920.1057" timestamp="1594730495273" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/-328.-1057.1920.1057@0.23.1440.877" timestamp="1594712105717" />
     <state x="90" y="100" width="1236" height="847" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594814097600">
