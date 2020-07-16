@@ -1,19 +1,16 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'issue.g.dart';
+part 'issue.freezed.dart';
 
-@JsonSerializable()
-class Issue {
-  @JsonKey(name: 'title')
-  String title;
-  @JsonKey(name: 'state')
-  String state;
-  @JsonKey(name: 'created_at')
-  String createdAt;
-
-  Issue({this.title, this.state, this.createdAt});
+@freezed
+abstract class Issue with _$Issue {
+  const factory Issue({
+    @required @JsonKey(name: 'title') String title,
+    @required @JsonKey(name: 'state') String state,
+    @required @JsonKey(name: 'created_at') String createdAt,
+  }) = _Issue;
 
   factory Issue.fromJson(Map<String, dynamic> json) => _$IssueFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IssueToJson(this);
 }

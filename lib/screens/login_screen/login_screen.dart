@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/constants.dart';
-import 'package:github_issue_tracker/service/github_service.dart';
+import 'package:github_issue_tracker/provider/github_provider.dart';
 import 'package:github_issue_tracker/widgets/login_form_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
         height: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 40.0),
         decoration: loginBackgroundImage,
-        child: Consumer<GitHubService>(
+        child: Consumer<GitHubProvider>(
           builder: (_, value, __) => value.loading
               ? Center(
                   child: Container(
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: <Widget>[
                               RaisedButton(
                                 onPressed: () {
-                                  Provider.of<GitHubService>(
+                                  Provider.of<GitHubProvider>(
                                     context,
                                     listen: false,
                                   ).getGitHubRepos(context, formKey: formKey);

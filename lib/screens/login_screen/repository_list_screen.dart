@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:github_issue_tracker/service/github_service.dart';
+import 'package:github_issue_tracker/provider/github_provider.dart';
 import 'package:provider/provider.dart';
 
 class RepositoryListScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class RepositoryListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Repository List'),
       ),
-      body: Consumer<GitHubService>(
+      body: Consumer<GitHubProvider>(
         builder: (context, loginService, child) => ListView.separated(
             padding: EdgeInsets.all(20),
             shrinkWrap: true,
@@ -19,7 +19,7 @@ class RepositoryListScreen extends StatelessWidget {
             itemBuilder: (context, int index) {
               return GestureDetector(
                 onTap: () {
-                  Provider.of<GitHubService>(context, listen: false)
+                  Provider.of<GitHubProvider>(context, listen: false)
                       .getGitHubIssues(
                     context: context,
                     issueUrl: loginService.repos[index].issuesUrl,

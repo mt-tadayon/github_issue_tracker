@@ -1,23 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'repository.g.dart';
+part 'repository.freezed.dart';
 
-@JsonSerializable()
-class Repository {
-  @JsonKey(name: 'name')
-  String name;
-  @JsonKey(name: 'description')
-  String description;
-  @JsonKey(name: 'stargazers_count')
-  double stargazersCount;
-  @JsonKey(name: 'open_issues')
-  double openIssues;
-  @JsonKey(name: 'issues_url')
-  String issuesUrl;
+@freezed
+abstract class Repository with _$Repository {
+  const factory Repository({
+  @required @JsonKey(name: 'name') String name,
+  @required @JsonKey(name: 'description') String description,
+  @required @JsonKey(name: 'stargazers_count') String stargazersCount,
+  @required @JsonKey(name: 'open_issues') String openIssues,
+  @required @JsonKey(name: 'issues_url') String issuesUrl,
+  }) = _Respotitory;
 
-  Repository({this.name, this.description, this.stargazersCount, this.openIssues, this.issuesUrl});
-
-  factory Repository.fromJson(Map<String, dynamic> json) => _$RepositoryFromJson(json);
-
-  Map<String, dynamic> toJson() => _$RepositoryToJson(this);
+  factory Repository.fromJson(Map<String, dynamic> json) =>
+      _$RepositoryFromJson(json);
 }

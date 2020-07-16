@@ -6,17 +6,17 @@ part of 'repository.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Repository _$RepositoryFromJson(Map<String, dynamic> json) {
-  return Repository(
+_$_Respotitory _$_$_RespotitoryFromJson(Map<String, dynamic> json) {
+  return _$_Respotitory(
     name: json['name'] as String,
     description: json['description'] as String,
-    stargazersCount: (json['stargazers_count'] as num)?.toDouble(),
-    openIssues: (json['open_issues'] as num)?.toDouble(),
+    stargazersCount: json['stargazers_count'] as String,
+    openIssues: json['open_issues'] as String,
     issuesUrl: json['issues_url'] as String,
   );
 }
 
-Map<String, dynamic> _$RepositoryToJson(Repository instance) =>
+Map<String, dynamic> _$_$_RespotitoryToJson(_$_Respotitory instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

@@ -7,16 +7,12 @@ import 'package:github_issue_tracker/repository/github_repository_repo.dart';
 import 'package:github_issue_tracker/screens/login_screen/issue_list_screen.dart';
 import 'package:github_issue_tracker/screens/login_screen/repository_list_screen.dart';
 
-class GitHubService extends ChangeNotifier {
-  String _username;
-  String _password;
+class GitHubProvider extends ChangeNotifier {
+  String username;
+  String password;
   List<Repository> _repos = [];
   List<Issue> _issues = [];
   bool _loading = false;
-
-  String get username => _username;
-
-  String get password => _password;
 
   List<Repository> get repos => _repos;
 
@@ -24,22 +20,12 @@ class GitHubService extends ChangeNotifier {
 
   bool get loading => _loading;
 
-  void setUsername(String username) {
-    _username = username;
-    notifyListeners();
-  }
-
-  void setPassword(String pass) {
-    _password = pass;
-    notifyListeners();
-  }
-
   Future<void> getGitHubRepos(BuildContext context,
       {GlobalKey<FormState> formKey}) async {
     _loading = true;
     notifyListeners();
     if (formKey.currentState.validate()) {
-      GitHubRepositoryRepo client = GitHubRepositoryRepo.create(_username);
+      GitHubRepositoryRepo client = GitHubRepositoryRepo.create(username);
       Response<Repository> repoFlutter = await client.getFlutterRepo();
       Response<Repository> repoWebsite = await client.getWebsiteRepo();
       Response<Repository> repoSamples = await client.getSamplesRepo();

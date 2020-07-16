@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:github_issue_tracker/service/github_service.dart';
+import 'package:github_issue_tracker/provider/github_provider.dart';
 import 'package:provider/provider.dart';
 
 class IssueListScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class IssueListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Issues'),
       ),
-      body: Consumer<GitHubService>(
+      body: Consumer<GitHubProvider>(
         builder: (context, issueService, child) =>
         ListView.builder(
           itemCount: issueService.issues.length,
