@@ -23,33 +23,50 @@ class _LoginScreenState extends State<LoginScreen> {
         height: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 40.0),
         decoration: loginBackgroundImage,
-        child: Form(
-          key: formKey,
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  LoginFormWidget(),
-                  SizedBox(height: 10.0),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      RaisedButton(
-                        onPressed: () {
-                          Provider.of<GitHubService>(
-                            context,
-                            listen: false,
-                          ).getGitHubRepos(context, formKey: formKey);
-                        },
-                        child: Text('Login'),
+        child: Consumer<GitHubService>(
+          builder: (_, value, __) => value.loading
+              ? Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xddffffff),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
                       ),
-                    ],
+                    ),
+                    padding: EdgeInsets.all(20),
+                    height: 100,
+                    width: 100,
+                    child: CircularProgressIndicator(),
                   ),
-                ],
-              ),
-            ),
-          ),
+                )
+              : Form(
+                  key: formKey,
+                  child: Center(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          LoginFormWidget(),
+                          SizedBox(height: 10.0),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              RaisedButton(
+                                onPressed: () {
+                                  Provider.of<GitHubService>(
+                                    context,
+                                    listen: false,
+                                  ).getGitHubRepos(context, formKey: formKey);
+                                },
+                                child: Text('Login'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
         ),
       ),
     );

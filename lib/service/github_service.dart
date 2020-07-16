@@ -12,9 +12,12 @@ class GitHubService extends ChangeNotifier {
   String password;
   List<Repository> repos = [];
   List<Issue> issues = [];
+  bool loading = false;
 
   Future<void> getGitHubRepos(BuildContext context,
       {GlobalKey<FormState> formKey}) async {
+    loading = true;
+    notifyListeners();
     if (formKey.currentState.validate()) {
       GitHubRepositoryRepo client = GitHubRepositoryRepo.create(username);
       Response<Repository> repoFlutter = await client.getFlutterRepo();
@@ -23,8 +26,11 @@ class GitHubService extends ChangeNotifier {
       print(repoFlutter.body.issuesUrl);
       if (repoFlutter.statusCode == 200) {
         repos = [repoFlutter.body, repoWebsite.body, repoSamples.body];
+        loading = false;
         notifyListeners();
       } else {
+        loading = false;
+        notifyListeners();
         return;
       }
 
