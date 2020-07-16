@@ -12,11 +12,11 @@ class IssueListScreen extends StatelessWidget {
         title: Text('Issues'),
       ),
       body: Consumer<GitHubProvider>(
-        builder: (context, issueService, child) => ListView.builder(
-          itemCount: issueService.issues.length,
+        builder: (context, GitHubProvider value, child) => ListView.builder(
+          itemCount: value.issues.length,
           itemBuilder: (context, index) {
             var createdDate = DateFormat.yMd()
-                .format(DateTime.parse(issueService.issues[index].createdAt));
+                .format(DateTime.parse(value.issues[index].createdAt));
             return Container(
               padding: EdgeInsets.all(10),
               child: Column(
@@ -29,7 +29,7 @@ class IssueListScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Title: ${issueService.issues[index].title}',
+                            'Title: ${value.issues[index].title}',
                             style: TextStyle(fontSize: 16),
                           ),
                           SizedBox(
@@ -39,7 +39,7 @@ class IssueListScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                  'Status: ${issueService.issues[index].state}'),
+                                  'Status: ${value.issues[index].state}'),
                               Text('Created at: $createdDate'),
                             ],
                           )

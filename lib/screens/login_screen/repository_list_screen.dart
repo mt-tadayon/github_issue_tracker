@@ -11,18 +11,17 @@ class RepositoryListScreen extends StatelessWidget {
         title: Text('Repository List'),
       ),
       body: Consumer<GitHubProvider>(
-        builder: (context, loginService, child) => ListView.separated(
+        builder: (context, GitHubProvider value, child) => ListView.separated(
             padding: EdgeInsets.all(20),
-            shrinkWrap: true,
             separatorBuilder: (BuildContext context, int index) => Divider(),
-            itemCount: loginService.repos.length,
+            itemCount: value.repos.length,
             itemBuilder: (context, int index) {
               return GestureDetector(
                 onTap: () {
                   Provider.of<GitHubProvider>(context, listen: false)
                       .getGitHubIssues(
                     context: context,
-                    issueUrl: loginService.repos[index].issuesUrl,
+                    issueUrl: value.repos[index].issuesUrl,
                   );
                 },
                 child: Card(
@@ -31,7 +30,7 @@ class RepositoryListScreen extends StatelessWidget {
                     padding: EdgeInsets.all(5),
                     child: ListTile(
                       title: Text(
-                        loginService.repos[index].name,
+                        value.repos[index].name,
                         style: TextStyle(fontSize: 22),
                       ),
                       subtitle: Column(
@@ -41,7 +40,7 @@ class RepositoryListScreen extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            loginService.repos[index].description,
+                            value.repos[index].description,
                             style: TextStyle(fontSize: 18),
                           ),
                           SizedBox(
@@ -53,7 +52,7 @@ class RepositoryListScreen extends StatelessWidget {
                                 child: Row(
                                   children: [
                                     Icon(Icons.open_in_browser),
-                                    Text(loginService.repos[index].openIssues
+                                    Text(value.repos[index].openIssues
                                         .toString())
                                   ],
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,7 +64,7 @@ class RepositoryListScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Icon(Icons.stars),
-                                    Text(loginService.repos[index].stargazersCount
+                                    Text(value.repos[index].stargazersCount
                                         .toString())
                                   ],
                                 ),

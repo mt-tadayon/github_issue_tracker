@@ -62,7 +62,7 @@ main() {
   GetIt sl = GetIt.instance;
 
   group("GitHubProvider: ", () {
-    GitHubProvider subject = GitHubProvider();
+    GitHubProvider subject;
 
     setUp(() {
       subject = GitHubProvider();
@@ -73,16 +73,18 @@ main() {
       sl.registerSingleton<GitHubRepositoryRepo>(
         MockGitHubRepositoryRepo(MockResponse(200)),
       );
-      await subject.getGitHubRepos();
+      bool expected = await subject.getGitHubRepos();
       expect(subject.repos.length, 3);
+      expect(expected, true);
     });
 
     test("should contain zero elements in repo list", () async {
       sl.registerSingleton<GitHubRepositoryRepo>(
         MockGitHubRepositoryRepo(MockResponse(404)),
       );
-      await subject.getGitHubRepos();
+      bool expected = await subject.getGitHubRepos();
       expect(subject.repos.length, 0);
+      expect(expected, false);
     });
   });
 }

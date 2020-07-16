@@ -25,12 +25,11 @@ class MyApp extends StatelessWidget {
       create: (context) => GitHubProvider(),
       child: MaterialApp(
         title: 'GitHub Issue Tracker',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+        theme: ThemeData.light().copyWith(
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          appBarTheme: AppBarTheme(
-            color: const Color(0xff2d788e),
-          ),
+          appBarTheme: ThemeData.light().appBarTheme.copyWith(
+                color: const Color(0xff2d788e),
+              ),
         ),
         home: LoginScreen(),
       ),

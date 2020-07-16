@@ -11,7 +11,6 @@ abstract class GitHubIssueRepo extends ChopperService {
   Future<Response<List<Issue>>> getIssues();
 
   static GitHubIssueRepo create(String issueUrl) {
-    print(issueUrl);
     final client = ChopperClient(
       baseUrl: issueUrl,
       interceptors: [HttpLoggingInterceptor()],

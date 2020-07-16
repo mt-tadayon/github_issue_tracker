@@ -31,7 +31,6 @@ class LoginFormWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           TextFormWidget(
-            keyboardType: TextInputType.emailAddress,
             hintText: 'Username',
             iconData: Icons.account_circle,
             controller: usernameController,

@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: EdgeInsets.symmetric(horizontal: 40.0),
         decoration: loginBackgroundImage,
         child: Consumer<GitHubProvider>(
-          builder: (_, value, __) => value.loading
+          builder: (_, GitHubProvider value, __) => value.loading
               ? Center(
                   child: Container(
                     decoration: BoxDecoration(
@@ -55,18 +55,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               RaisedButton(
                                 onPressed: () async {
                                   if (formKey.currentState.validate()) {
-                                    await Provider.of<GitHubProvider>(
+                                    bool status =
+                                        await Provider.of<GitHubProvider>(
                                       context,
                                       listen: false,
                                     ).getGitHubRepos();
-
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            RepositoryListScreen(),
-                                      ),
-                                    );
+                                    if (status)
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              RepositoryListScreen(),
+                                        ),
+                                      );
                                   }
                                 },
                                 child: Text('Login'),

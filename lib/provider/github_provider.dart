@@ -20,7 +20,7 @@ class GitHubProvider extends ChangeNotifier {
 
   bool get loading => _loading;
 
-  Future<void> getGitHubRepos() async {
+  Future<bool> getGitHubRepos() async {
     _loading = true;
     notifyListeners();
     GitHubRepositoryRepo client = locator.get<GitHubRepositoryRepo>();
@@ -28,14 +28,17 @@ class GitHubProvider extends ChangeNotifier {
     Response<Repository> repoWebsite = await client.getWebsiteRepo();
     Response<Repository> repoSamples = await client.getSamplesRepo();
 
-    if (repoFlutter.statusCode == 200) {
+    if (repoFlutter.statusCode == 200 &&
+        repoWebsite.statusCode == 200 &&
+        repoSamples.statusCode == 200) {
       _repos = [repoFlutter.body, repoWebsite.body, repoSamples.body];
       _loading = false;
       notifyListeners();
+      return true;
     } else {
       _loading = false;
       notifyListeners();
-      return;
+      return false;
     }
   }
 
@@ -45,9 +48,9 @@ class GitHubProvider extends ChangeNotifier {
   }) async {
     issueUrl = issueUrl.split('issue').first;
     GitHubIssueRepo client = GitHubIssueRepo.create(issueUrl);
-    Response<List<Issue>> issue = await client.getIssues();
-    if (issue.statusCode == 200) {
-      _issues = issue.body;
+    Response<List<Issue>> response = await client.getIssues();
+    if (response.statusCode == 200) {
+      _issues = response.body;
     } else {
       return;
     }
