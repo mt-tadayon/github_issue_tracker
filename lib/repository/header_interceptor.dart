@@ -9,7 +9,7 @@ class HeaderInterceptor implements RequestInterceptor {
   @override
   FutureOr<Request> onRequest(Request request) async {
     Request newRequest =
-        request.copyWith(headers: {AUTH_HEADER: BEARER + TOKEN});
+        request.copyWith(headers: {AUTH_HEADER: bearer + token});
     return newRequest;
   }
 }

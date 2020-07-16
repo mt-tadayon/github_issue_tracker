@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/provider/github_provider.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class IssueListScreen extends StatelessWidget {
@@ -14,7 +15,9 @@ class IssueListScreen extends StatelessWidget {
         builder: (context, issueService, child) =>
         ListView.builder(
           itemCount: issueService.issues.length,
-          itemBuilder: (context, index) => Container(
+          itemBuilder: (context, index) {
+            var createdDate = DateFormat.yMd().format(DateTime.parse(issueService.issues[index].createdAt));
+            return Container(
             padding: EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -29,11 +32,11 @@ class IssueListScreen extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('Status: ${issueService.issues[index].state}'),
-                            Text('Created at: ${issueService.issues[index].createdAt}'),
+                            Text('Created at: $createdDate'),
                           ],
                         )
                       ],
@@ -43,7 +46,8 @@ class IssueListScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ),
+          );
+          },
         ),
       ),
     );
