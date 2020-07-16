@@ -38,7 +38,7 @@ class RepositoryListScreen extends StatelessWidget {
                         loginService.repos[index].description,
                       ),
                       trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Icon(Icons.stars),
                           Text(loginService.repos[index].stargazersCount.toString())
