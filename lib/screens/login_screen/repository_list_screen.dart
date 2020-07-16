@@ -30,16 +30,48 @@ class RepositoryListScreen extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(5),
                     child: ListTile(
-                      title: Text(loginService.repos[index].name),
-                      subtitle: Text(
-                        loginService.repos[index].description,
+                      title: Text(
+                        loginService.repos[index].name,
+                        style: TextStyle(fontSize: 22),
                       ),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(Icons.stars),
-                          Text(loginService.repos[index].stargazersCount
-                              .toString())
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            loginService.repos[index].description,
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.open_in_browser),
+                                    Text(loginService.repos[index].openIssues
+                                        .toString())
+                                  ],
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                )
+                              ),
+                              Spacer(flex: 1,),
+                              Expanded(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(Icons.stars),
+                                    Text(loginService.repos[index].stargazersCount
+                                        .toString())
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),

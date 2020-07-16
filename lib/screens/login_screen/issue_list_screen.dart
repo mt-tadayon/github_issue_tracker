@@ -12,41 +12,45 @@ class IssueListScreen extends StatelessWidget {
         title: Text('Issues'),
       ),
       body: Consumer<GitHubProvider>(
-        builder: (context, issueService, child) =>
-        ListView.builder(
+        builder: (context, issueService, child) => ListView.builder(
           itemCount: issueService.issues.length,
           itemBuilder: (context, index) {
-            var createdDate = DateFormat.yMd().format(DateTime.parse(issueService.issues[index].createdAt));
+            var createdDate = DateFormat.yMd()
+                .format(DateTime.parse(issueService.issues[index].createdAt));
             return Container(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Title: ${issueService.issues[index].title}'),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Status: ${issueService.issues[index].state}'),
-                            Text('Created at: $createdDate'),
-                          ],
-                        )
-                      ],
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Title: ${issueService.issues[index].title}',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                  'Status: ${issueService.issues[index].state}'),
+                              Text('Created at: $createdDate'),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
+                    elevation: 5,
                   ),
-                  elevation: 5,
-                ),
-              ],
-            ),
-          );
+                ],
+              ),
+            );
           },
         ),
       ),
