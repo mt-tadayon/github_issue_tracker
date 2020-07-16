@@ -18,9 +18,9 @@ abstract class GitHubRepositoryRepo extends ChopperService {
   Future<Response<Repository>> getSamplesRepo();
 
 
-  static GitHubRepositoryRepo create(String username) {
+  static GitHubRepositoryRepo create() {
     final client = ChopperClient(
-      baseUrl: 'https://api.github.com/repos/$username',
+      baseUrl: 'https://api.github.com/repos/mt-tadayon',
       interceptors: [HeaderInterceptor(), HttpLoggingInterceptor()],
       converter: ModelConverter(),
       errorConverter: JsonConverter(),

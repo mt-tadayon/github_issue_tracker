@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:github_issue_tracker/locator.dart';
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 import 'provider/github_provider.dart';
 import 'screens/login_screen/login_screen.dart';
 
 void main() {
+  setupLocator();
   _setupLogging();
   runApp(MyApp());
 }

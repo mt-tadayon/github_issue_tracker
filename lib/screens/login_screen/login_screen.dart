@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/constants.dart';
 import 'package:github_issue_tracker/provider/github_provider.dart';
+import 'package:github_issue_tracker/screens/login_screen/repository_list_screen.dart';
 import 'package:github_issue_tracker/widgets/login_form_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -52,11 +53,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: <Widget>[
                               RaisedButton(
-                                onPressed: () {
-                                  Provider.of<GitHubProvider>(
-                                    context,
-                                    listen: false,
-                                  ).getGitHubRepos(context, formKey: formKey);
+                                onPressed: () async {
+                                  if (formKey.currentState.validate()) {
+                                    await Provider.of<GitHubProvider>(
+                                      context,
+                                      listen: false,
+                                    ).getGitHubRepos();
+
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            RepositoryListScreen(),
+                                      ),
+                                    );
+                                  }
                                 },
                                 child: Text('Login'),
                               ),
