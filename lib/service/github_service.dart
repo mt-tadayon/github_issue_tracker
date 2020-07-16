@@ -8,28 +8,48 @@ import 'package:github_issue_tracker/screens/login_screen/issue_list_screen.dart
 import 'package:github_issue_tracker/screens/login_screen/repository_list_screen.dart';
 
 class GitHubService extends ChangeNotifier {
-  String username;
-  String password;
-  List<Repository> repos = [];
-  List<Issue> issues = [];
-  bool loading = false;
+  String _username;
+  String _password;
+  List<Repository> _repos = [];
+  List<Issue> _issues = [];
+  bool _loading = false;
+
+  String get username => _username;
+
+  String get password => _password;
+
+  List<Repository> get repos => _repos;
+
+  List<Issue> get issues => _issues;
+
+  bool get loading => _loading;
+
+  void setUsername(String username) {
+    _username = username;
+    notifyListeners();
+  }
+
+  void setPassword(String pass) {
+    _password = pass;
+    notifyListeners();
+  }
 
   Future<void> getGitHubRepos(BuildContext context,
       {GlobalKey<FormState> formKey}) async {
-    loading = true;
+    _loading = true;
     notifyListeners();
     if (formKey.currentState.validate()) {
-      GitHubRepositoryRepo client = GitHubRepositoryRepo.create(username);
+      GitHubRepositoryRepo client = GitHubRepositoryRepo.create(_username);
       Response<Repository> repoFlutter = await client.getFlutterRepo();
       Response<Repository> repoWebsite = await client.getWebsiteRepo();
       Response<Repository> repoSamples = await client.getSamplesRepo();
       print(repoFlutter.body.issuesUrl);
       if (repoFlutter.statusCode == 200) {
-        repos = [repoFlutter.body, repoWebsite.body, repoSamples.body];
-        loading = false;
+        _repos = [repoFlutter.body, repoWebsite.body, repoSamples.body];
+        _loading = false;
         notifyListeners();
       } else {
-        loading = false;
+        _loading = false;
         notifyListeners();
         return;
       }
@@ -48,7 +68,7 @@ class GitHubService extends ChangeNotifier {
     GitHubIssueRepo client = GitHubIssueRepo.create(issueUrl);
     Response<List<Issue>> issue = await client.getIssues();
     if (issue.statusCode == 200) {
-      issues = issue.body;
+      _issues = issue.body;
     } else {
       return;
     }

@@ -14,11 +14,11 @@ class LoginFormWidget extends StatelessWidget {
     final loginProvider = Provider.of<GitHubService>(context);
 
     usernameController.addListener(() {
-      loginProvider.username = usernameController.text;
+      loginProvider.setUsername(usernameController.text);
     });
 
     passwordController.addListener(() {
-      loginProvider.password = passwordController.text;
+      loginProvider.setPassword(passwordController.text);
     });
 
     return Container(
