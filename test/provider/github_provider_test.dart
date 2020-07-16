@@ -26,9 +26,9 @@ class MockGitHubRepositoryRepo extends Mock implements GitHubRepositoryRepo {
       response,
       Repository(
           name: "FlutterTestRepo",
-          openIssues: "55",
+          openIssues: 55,
           issuesUrl: "url_to_issues",
-          stargazersCount: "1",
+          stargazersCount: 1,
           description: "TestDescription"),
     );
   }
@@ -38,9 +38,9 @@ class MockGitHubRepositoryRepo extends Mock implements GitHubRepositoryRepo {
       response,
       Repository(
           name: "WebsiteTestRepo",
-          openIssues: "15",
+          openIssues: 15,
           issuesUrl: "url_to_issues",
-          stargazersCount: "201",
+          stargazersCount: 201,
           description: "TestDescription"),
     );
   }
@@ -50,9 +50,9 @@ class MockGitHubRepositoryRepo extends Mock implements GitHubRepositoryRepo {
       response,
       Repository(
           name: "SamplesTestRepo",
-          openIssues: "5",
+          openIssues: 5,
           issuesUrl: "http://samples/test/",
-          stargazersCount: "201",
+          stargazersCount: 201,
           description: "TestDescription"),
     );
   }

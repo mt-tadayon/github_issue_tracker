@@ -8,9 +8,9 @@ void main() {
     _repoModel = Repository(
         name: 'repo',
         description: 'This is repo description',
-        stargazersCount: '100',
+        stargazersCount: 100,
         issuesUrl: 'www.github.com/flutter',
-        openIssues: '10');
+        openIssues: 10);
     expect(_repoModel.name.runtimeType, equals(String));
     expect(_repoModel.description, isNotEmpty);
     expect(_repoModel.stargazersCount, isNotNull);

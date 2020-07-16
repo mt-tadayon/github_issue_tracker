@@ -19,8 +19,8 @@ class _$RepositoryTearOff {
   _Respotitory call(
       {@required @JsonKey(name: 'name') String name,
       @required @JsonKey(name: 'description') String description,
-      @required @JsonKey(name: 'stargazers_count') String stargazersCount,
-      @required @JsonKey(name: 'open_issues') String openIssues,
+      @required @JsonKey(name: 'stargazers_count') int stargazersCount,
+      @required @JsonKey(name: 'open_issues') int openIssues,
       @required @JsonKey(name: 'issues_url') String issuesUrl}) {
     return _Respotitory(
       name: name,
@@ -41,9 +41,9 @@ mixin _$Repository {
   @JsonKey(name: 'description')
   String get description;
   @JsonKey(name: 'stargazers_count')
-  String get stargazersCount;
+  int get stargazersCount;
   @JsonKey(name: 'open_issues')
-  String get openIssues;
+  int get openIssues;
   @JsonKey(name: 'issues_url')
   String get issuesUrl;
 
@@ -58,8 +58,8 @@ abstract class $RepositoryCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'stargazers_count') String stargazersCount,
-      @JsonKey(name: 'open_issues') String openIssues,
+      @JsonKey(name: 'stargazers_count') int stargazersCount,
+      @JsonKey(name: 'open_issues') int openIssues,
       @JsonKey(name: 'issues_url') String issuesUrl});
 }
 
@@ -84,9 +84,8 @@ class _$RepositoryCopyWithImpl<$Res> implements $RepositoryCopyWith<$Res> {
           description == freezed ? _value.description : description as String,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
-          : stargazersCount as String,
-      openIssues:
-          openIssues == freezed ? _value.openIssues : openIssues as String,
+          : stargazersCount as int,
+      openIssues: openIssues == freezed ? _value.openIssues : openIssues as int,
       issuesUrl: issuesUrl == freezed ? _value.issuesUrl : issuesUrl as String,
     ));
   }
@@ -101,8 +100,8 @@ abstract class _$RespotitoryCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'stargazers_count') String stargazersCount,
-      @JsonKey(name: 'open_issues') String openIssues,
+      @JsonKey(name: 'stargazers_count') int stargazersCount,
+      @JsonKey(name: 'open_issues') int openIssues,
       @JsonKey(name: 'issues_url') String issuesUrl});
 }
 
@@ -129,9 +128,8 @@ class __$RespotitoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
           description == freezed ? _value.description : description as String,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
-          : stargazersCount as String,
-      openIssues:
-          openIssues == freezed ? _value.openIssues : openIssues as String,
+          : stargazersCount as int,
+      openIssues: openIssues == freezed ? _value.openIssues : openIssues as int,
       issuesUrl: issuesUrl == freezed ? _value.issuesUrl : issuesUrl as String,
     ));
   }
@@ -162,10 +160,10 @@ class _$_Respotitory implements _Respotitory {
   final String description;
   @override
   @JsonKey(name: 'stargazers_count')
-  final String stargazersCount;
+  final int stargazersCount;
   @override
   @JsonKey(name: 'open_issues')
-  final String openIssues;
+  final int openIssues;
   @override
   @JsonKey(name: 'issues_url')
   final String issuesUrl;
@@ -218,8 +216,8 @@ abstract class _Respotitory implements Repository {
   const factory _Respotitory(
           {@required @JsonKey(name: 'name') String name,
           @required @JsonKey(name: 'description') String description,
-          @required @JsonKey(name: 'stargazers_count') String stargazersCount,
-          @required @JsonKey(name: 'open_issues') String openIssues,
+          @required @JsonKey(name: 'stargazers_count') int stargazersCount,
+          @required @JsonKey(name: 'open_issues') int openIssues,
           @required @JsonKey(name: 'issues_url') String issuesUrl}) =
       _$_Respotitory;
 
@@ -234,10 +232,10 @@ abstract class _Respotitory implements Repository {
   String get description;
   @override
   @JsonKey(name: 'stargazers_count')
-  String get stargazersCount;
+  int get stargazersCount;
   @override
   @JsonKey(name: 'open_issues')
-  String get openIssues;
+  int get openIssues;
   @override
   @JsonKey(name: 'issues_url')
   String get issuesUrl;

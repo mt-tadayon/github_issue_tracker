@@ -10,8 +10,8 @@ _$_Respotitory _$_$_RespotitoryFromJson(Map<String, dynamic> json) {
   return _$_Respotitory(
     name: json['name'] as String,
     description: json['description'] as String,
-    stargazersCount: json['stargazers_count'] as String,
-    openIssues: json['open_issues'] as String,
+    stargazersCount: json['stargazers_count'] as int,
+    openIssues: json['open_issues'] as int,
     issuesUrl: json['issues_url'] as String,
   );
 }
