@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/constants.dart';
-import 'package:github_issue_tracker/service/github_repository_service.dart';
+import 'package:github_issue_tracker/service/github_service.dart';
 import 'package:github_issue_tracker/widgets/text_form_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class LoginFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loginProvider = Provider.of<GitHubRepositoryService>(context);
+    final loginProvider = Provider.of<GitHubService>(context);
 
     usernameController.addListener(() {
       loginProvider.username = usernameController.text;

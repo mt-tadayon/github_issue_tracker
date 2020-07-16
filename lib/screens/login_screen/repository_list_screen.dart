@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:github_issue_tracker/screens/login_screen/issue_list_screen.dart';
-import 'package:github_issue_tracker/service/github_repository_service.dart';
+import 'package:github_issue_tracker/service/github_service.dart';
 import 'package:provider/provider.dart';
 
 class RepositoryListScreen extends StatelessWidget {
@@ -11,9 +10,8 @@ class RepositoryListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Repository List'),
       ),
-      body: Consumer<GitHubRepositoryService>(
-        builder: (context, loginService, child) =>
-        ListView.separated(
+      body: Consumer<GitHubService>(
+        builder: (context, loginService, child) => ListView.separated(
             padding: EdgeInsets.all(20),
             shrinkWrap: true,
             separatorBuilder: (BuildContext context, int index) => Divider(),
@@ -21,11 +19,10 @@ class RepositoryListScreen extends StatelessWidget {
             itemBuilder: (context, int index) {
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => IssueListScreen(),
-                    ),
+                  Provider.of<GitHubService>(context, listen: false)
+                      .getGitHubIssues(
+                    context: context,
+                    issueUrl: loginService.repos[index].issuesUrl,
                   );
                 },
                 child: Card(
@@ -41,7 +38,8 @@ class RepositoryListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Icon(Icons.stars),
-                          Text(loginService.repos[index].stargazersCount.toString())
+                          Text(loginService.repos[index].stargazersCount
+                              .toString())
                         ],
                       ),
                     ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/login_screen/login_screen.dart';
-import 'service/github_repository_service.dart';
+import 'service/github_service.dart';
 import 'package:logging/logging.dart';
 
 
@@ -20,8 +20,8 @@ void _setupLogging() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<GitHubRepositoryService>(
-      create: (context) => GitHubRepositoryService(),
+    return ChangeNotifierProvider<GitHubService>(
+      create: (context) => GitHubService(),
       child: MaterialApp(
         title: 'GitHub Issue Tracker',
         theme: ThemeData(

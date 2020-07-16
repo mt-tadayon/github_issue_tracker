@@ -12,8 +12,10 @@ class Repository {
   double stargazersCount;
   @JsonKey(name: 'open_issues')
   double openIssues;
+  @JsonKey(name: 'issues_url')
+  String issuesUrl;
 
-  Repository({this.name, this.description, this.stargazersCount, this.openIssues});
+  Repository({this.name, this.description, this.stargazersCount, this.openIssues, this.issuesUrl});
 
   factory Repository.fromJson(Map<String, dynamic> json) => _$RepositoryFromJson(json);
 

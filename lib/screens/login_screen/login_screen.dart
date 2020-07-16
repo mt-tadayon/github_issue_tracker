@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/constants.dart';
-import 'package:github_issue_tracker/service/github_repository_service.dart';
+import 'package:github_issue_tracker/service/github_service.dart';
 import 'package:github_issue_tracker/widgets/login_form_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -37,8 +37,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       RaisedButton(
                         onPressed: () {
-                          Provider.of<GitHubRepositoryService>(context, listen: false)
-                              .userLogin(context, formKey: formKey);
+                          Provider.of<GitHubService>(
+                            context,
+                            listen: false,
+                          ).getGitHubRepos(context, formKey: formKey);
                         },
                         child: Text('Login'),
                       ),
