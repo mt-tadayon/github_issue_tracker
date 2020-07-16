@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:github_issue_tracker/constants.dart';
-import 'file:///D:/Users/FlutterExplained/AndroidStudioProjects/github_issue_tracker/lib/widgets/login_form_widget.dart';
-import 'package:github_issue_tracker/screens/login_screen/repository_list_screen.dart';
-import 'package:github_issue_tracker/service/login_service.dart';
+import 'package:github_issue_tracker/service/github_repository_service.dart';
+import 'package:github_issue_tracker/widgets/login_form_widget.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -38,14 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       RaisedButton(
                         onPressed: () {
-                          Provider.of<LoginService>(context, listen: false)
-                              .userLogin(formKey);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RepositoryListScreen(),
-                            ),
-                          );
+                          Provider.of<GitHubRepositoryService>(context, listen: false)
+                              .userLogin(context, formKey: formKey);
                         },
                         child: Text('Login'),
                       ),
