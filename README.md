@@ -1,6 +1,20 @@
 # github_issue_tracker
 
-A new Flutter application.
+This is a Flutter application. With this application I can sign in to my Github account and see flutter, website and samples repositories and the issues to each repository. 
+
+This application contains the following screens:
+
+- Log in screen: LogIn to GitHub with username and token
+- Repository screen: Show needed information for a repository - URLs for repos are hard coded to my own account
+- Issue screen: Show all needed information for each issue
+
+# Technical requirement 
+
+- Used chopper for API call
+- Used Provider and ChangeNotifier for state management
+- Used get_it for dependency
+- Used freezed and json_serializable for data model and mapping
+- Wrote some unit tests and widget tests
 
 ## Getting Started
 
